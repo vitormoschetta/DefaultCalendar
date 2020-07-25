@@ -1,0 +1,50 @@
+@model DefaultCalendar.Models.Event
+
+<div class="modal fade" id="modalCreateEvent" role="dialog" aria-labelledby="eventModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form asp-action="Create">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="eventModalLabel">Event</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">                
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Title</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" asp-for="Title">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Start Time</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" asp-for="Start">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">End Time</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" asp-for="End">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Description</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" asp-for="Description" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3 offset-sm-9">
+                                <label><input type="checkbox" asp-for="AllDay" /> All Day</label>
+                            </div>
+                        </div>                            
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <input type="submit" class="btn btn-primary" value="Create" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

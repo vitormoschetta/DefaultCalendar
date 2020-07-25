@@ -1,0 +1,34 @@
+
+<script>
+
+    function CreateEvent(strDate) {
+
+        var rota = '@Url.Action("Create","Calendar")';
+
+        $.get(rota, { date: strDate }, function (data)
+        {
+            $("#carrega-modal").html(data);
+            $('#modalCreateEvent').modal('show');
+        })
+        .fail(function() {
+            alert("Erro interno");
+        }); 
+    }
+
+
+    function EditEvent(id) {
+
+        var rota = '@Url.Action("Edit","Calendar")';
+
+        $.get(rota, { eventId: id }, function (data)
+        {
+            $("#carrega-modal").html(data);
+            $('#modalEditEvent').modal('show');
+        })
+        .fail(function() {
+            alert("Erro interno");
+        }); 
+    }
+    
+  
+</script>
